@@ -55,10 +55,15 @@ class LoginController: UIViewController
             //Save users with his name
             
             //Firebase Database Refrence
+            guard let uid = user?.uid else {
+                return
+            }
             let refDatabase = Database.database().reference(fromURL: "https://chatappwithfirebase-b69fc.firebaseio.com/")
+            //Adding child with user and it's uid
+            let usersRef = refDatabase.child("users").child(uid)
             let values = ["name": name, "email": email]
             
-            refDatabase.updateChildValues(values, withCompletionBlock: { (err, refDatabase) in
+            usersRef.updateChildValues(values, withCompletionBlock: { (err, refDatabase) in
                 
                 if err != nil {
                     print(err as Any)
