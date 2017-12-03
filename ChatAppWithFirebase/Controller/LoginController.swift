@@ -11,6 +11,8 @@ import Firebase
 
 class LoginController: UIViewController
 {
+    
+    var messageController: MessageController?
 
     //Mark Create Container View which hold the all UIContent
     let inputsContainerView: UIView =
@@ -64,6 +66,8 @@ class LoginController: UIViewController
             }
             
             //Mark: Successfully logged in our users
+            
+            self.messageController?.fetchUserAndSetupNavBar()
             self.dismiss(animated: true, completion: nil)
         }
     }

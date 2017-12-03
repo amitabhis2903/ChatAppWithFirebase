@@ -36,11 +36,13 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
             
             //Mark: unique id for image
             let imageName = NSUUID().uuidString
-            let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
+            let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).jpg")
             
-            //Mark: Create binary data to upload image on firebase
-            if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!)
-            {
+            //Mark: Compress the Images
+            
+            if let profileImage = self.profileImageView.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
+                
+                //Mark: Create binary data to upload image on firebase
                 storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                     
                     if error != nil
@@ -72,6 +74,16 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
                 print(err as Any)
                 return
             }
+            
+//            self.messageController?.fetchUserAndSetupNavBar()
+//            self.messageController?.navigationItem.title = values["name"] as? String
+            
+            let user = UsersManagment()
+            user.name = values["name"] as? String
+            user.email = values["email"] as? String
+            user.profileImageUrl = values["profileImageUrl"] as? String
+
+            self.messageController?.setupNavBarWithUser(user: user)
             
             self.dismiss(animated: true, completion: nil)
             

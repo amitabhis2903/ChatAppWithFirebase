@@ -13,6 +13,8 @@
 		115E829E1FD1D3610032548C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115E829D1FD1D3610032548C /* Assets.xcassets */; };
 		115E82A11FD1D3610032548C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 115E829F1FD1D3610032548C /* LaunchScreen.storyboard */; };
 		115E82AA1FD1D6B80032548C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115E82A91FD1D6B80032548C /* LoginController.swift */; };
+		116107611FD36B5B00643A2C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116107601FD36B5A00643A2C /* Extension.swift */; };
+		116107631FD383F700643A2C /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116107621FD383F700643A2C /* ChatLogController.swift */; };
 		11BF5F7D1FD2C18600D135B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11BF5F7C1FD2C18500D135B0 /* GoogleService-Info.plist */; };
 		11BF5F7F1FD313D900D135B0 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5F7E1FD313D900D135B0 /* NewMessageController.swift */; };
 		11BF5F821FD329D500D135B0 /* UsersManagment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BF5F811FD329D500D135B0 /* UsersManagment.swift */; };
@@ -29,6 +31,8 @@
 		115E82A01FD1D3610032548C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		115E82A21FD1D3610032548C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		115E82A91FD1D6B80032548C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		116107601FD36B5A00643A2C /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		116107621FD383F700643A2C /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		11BF5F7C1FD2C18500D135B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11BF5F7E1FD313D900D135B0 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		11BF5F811FD329D500D135B0 /* UsersManagment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersManagment.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		115E82951FD1D3610032548C /* ChatAppWithFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				1161075F1FD36B3D00643A2C /* Helpers */,
 				11BF5F801FD329B700D135B0 /* Modal */,
 				115E82A81FD1D69B0032548C /* Controller */,
 				115E82961FD1D3610032548C /* AppDelegate.swift */,
@@ -98,8 +103,17 @@
 				115E82981FD1D3610032548C /* MessageController.swift */,
 				11BF5F7E1FD313D900D135B0 /* NewMessageController.swift */,
 				11BF5F831FD33E8C00D135B0 /* LoginController+handlers.swift */,
+				116107621FD383F700643A2C /* ChatLogController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		1161075F1FD36B3D00643A2C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				116107601FD36B5A00643A2C /* Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		11BF5F801FD329B700D135B0 /* Modal */ = {
@@ -255,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116107631FD383F700643A2C /* ChatLogController.swift in Sources */,
 				11BF5F7F1FD313D900D135B0 /* NewMessageController.swift in Sources */,
 				115E82991FD1D3610032548C /* MessageController.swift in Sources */,
+				116107611FD36B5B00643A2C /* Extension.swift in Sources */,
 				11BF5F841FD33E8C00D135B0 /* LoginController+handlers.swift in Sources */,
 				11BF5F821FD329D500D135B0 /* UsersManagment.swift in Sources */,
 				115E82AA1FD1D6B80032548C /* LoginController.swift in Sources */,
