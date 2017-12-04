@@ -79,6 +79,8 @@ class LoginController: UIViewController
     {
         let textField = UITextField()
         textField.placeholder = "Name"
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .words
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -96,6 +98,8 @@ class LoginController: UIViewController
     {
         let textField = UITextField()
         textField.placeholder = "Email"
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -113,6 +117,8 @@ class LoginController: UIViewController
     {
         let textField = UITextField()
         textField.placeholder = "Password"
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
         return textField
