@@ -53,9 +53,9 @@ class MessageController: UITableViewController
                     
                     //self.messages.append(message)
                     
-                    if let toId = message.toId
+                    if let chatPatnerId = message.chatPatnerId()
                     {
-                        self.messagesDictonary[toId] = message
+                        self.messagesDictonary[chatPatnerId] = message
                         
                         self.messages = Array(self.messagesDictonary.values)
                         //                    self.messages.sort(by: { (message1, message2) -> Bool in
@@ -64,10 +64,9 @@ class MessageController: UITableViewController
                         //                    })
                     }
                     
+                    self.timer?.invalidate()
+                    self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleReloadTable), userInfo: nil, repeats: false)
                     
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
                     
                 }
                 
@@ -78,6 +77,16 @@ class MessageController: UITableViewController
         }, withCancel: nil)
     }
     
+    var timer: Timer?
+    
+   @objc func handleReloadTable()
+    {
+        //Mark: Call this method on main thread.
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
     
     
     func observeMessages()
